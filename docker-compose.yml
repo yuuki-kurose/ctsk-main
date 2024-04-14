@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.6
+    container_name: "dev-ctsk"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: local_dev-ctsk
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+      TZ: 'Asia/Tokyo'
+    ports:
+      - 3306:3306
