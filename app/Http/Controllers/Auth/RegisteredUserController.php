@@ -45,6 +45,10 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        // 情報登録後、ログイン情報からuser idを取得する
+        $userId = Auth::user()->id;
+
+        // 取得したidをリダイレクト先に埋め込む
+        return redirect()->route('dashboard', ['id' => $userId]);
     }
 }
