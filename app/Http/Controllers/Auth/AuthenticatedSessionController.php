@@ -28,11 +28,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        // ログイン情報からuserのidを取得する
-        $userId = Auth::user()->id;
-
-        // リダイレクト先に取得したuser idをセットする
-        return redirect()->route('dashboard', ['id' => $userId]);
+        // リダイレクト先にダッシュボードを指定
+        return redirect()->route('dashboard');
     }
 
     /**
