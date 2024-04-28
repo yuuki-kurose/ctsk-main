@@ -17,9 +17,11 @@ Route::middleware('guest')->group(function () {
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
+    // login画面に遷移
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
 
+    // ログイン情報を送信
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
