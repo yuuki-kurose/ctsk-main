@@ -11,7 +11,7 @@ Route::get('/', function () {
 });
 
 // localhost:8000へアクセスしたら、ログイン画面に遷移するように設定
-Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+// Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
 
 // dashboardへのルート設定
 Route::middleware('auth')->group(function () {
